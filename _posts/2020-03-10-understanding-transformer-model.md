@@ -66,6 +66,7 @@ Tại vì mô hình sử dụng Self-Attention và không có mối tương quan
 <p align="center"><b>Position Encoding (Time signal encoding) </b></p>
 
 Công thức của Position Encoding (PE) là : 
+<br>
 $$PE_{pos,2i}=sin(pos/10000^{2i/d_{model}})$$
 <br>
 $$PE_{pos,2i+1}=cos(pos/10000^{2i/d_{model}})$$
