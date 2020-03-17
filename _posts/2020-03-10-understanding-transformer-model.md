@@ -106,6 +106,9 @@ Với câu trên thì câu hỏi đặt ra là từ **"it"** biểu diễn cho t
 
 Chúng ta có thể thấy ở đây thì "it_" có liên kết khá mạnh với "The animal" và đương nhiên là có liên kết với tất cả từ khác tuy nhiên khá yếu.
 
+Công thức Self-Attention : 
+
+$$ Attention_{Q,K,V}= softmax(\frac{QK^{T}}{\sqrt(d_{k})})V$$
 Self-Attention một cách trực quan : 
 
 Với mỗi đầu vào là vector $x_{i}$ ta sẽ có 3 ma trận $W^{Q},W^{K},W^{V}$ tương ứng với $(Q,K,V)$. Lấy  $x_{i}$ nhân với từng ma trận trên sẽ ra 3 vector $q_{i},k_{i},v_{i}$ tương ứng.
@@ -121,4 +124,19 @@ Sau khi đã có $q_{i},k_{i},v_{i}$ thì ta sẽ tính điểm cho từng vị 
 Trong bài báo có đề cập đến kết quả sau khi nhân $q_{i}*k_{x}^{T}$ đem chia cho $\sqrt(d_{model})$ khi $d_{model}$ nhỏ sẽ như nhau tuy nhiên khi $d_{model}$ lớn thì dot-product $q$ và $k$ sẽ đưa ra kết quả có giá trị lớn hơn và sẽ chia kết quả softmax sang 2 vùng ở 2 cực.
 
 Kết quả sau khi chia sẽ qua lớp softmax để normalize kết quả và có tổng xác suất bằng 1 (tính chất của softmax).
-![](https://i.imgur.com/JQnewed.png)
+
+Bước tiếp theo sẽ giải thích tại sao ta sử dụng softmax. Ta sẽ dùng từng kết quả ở lớp softmax nhân với vector $v_{i}$ tương ứng để ra được những giá trị $att_{i,j}$ và cộng tổng chúng lại ra vector $z_{1}$ là vector chú ý cho từ $x_{i}$.
+
+![](https://i.imgur.com/R7xowT8.png)
+
+Kết quả đầu ra các $z_{i}$ sẽ đưa vào lớp Feed Forward như ở trên đã nói để ra vector $r_{i}$ và lại đưa vào lớp Encoder Layer tiếp theo.
+
+**Đó là trực quan về từng từ tuy nhiên trong thực tế thì người ta sẽ không chạy từng từ mà sẽ chạy cả câu hay thậm chí là nhiều câu cùng một lúc để tối ưu GPU và tối ưu tài nguyên có tuy nhiên cách thức thực hiện cũng tương tự.**
+
+![](https://i.imgur.com/ZlFKgnw.png)
+
+Tương tự cách tính attention như trên: 
+
+![](https://i.imgur.com/Nb2y5sI.png)
+
+Vector $Z$ là vector attention của cả chuỗi đầu vào.
