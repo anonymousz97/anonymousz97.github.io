@@ -67,6 +67,7 @@ Tại vì mô hình sử dụng Self-Attention và không có mối tương quan
 
 Công thức của Position Encoding (PE) là : 
 $$PE_{pos,2i}=sin(pos/10000^{2i/d_{model}})$$
+<br>
 $$PE_{pos,2i+1}=cos(pos/10000^{2i/d_{model}})$$
 
 Trong đó thì $pos$ là vị trí của từ đó trong chuỗi còn $i$ là vị trí chiều.
