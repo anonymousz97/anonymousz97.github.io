@@ -55,4 +55,42 @@ Còn đối với Decoder thì mỗi khối sẽ sử dụng 2 lớp chú ý (At
 </div>
 <p align="center"><b>Khối Decoder</b></p>
 
+## 2.2 Embedding và Position Encoding
+### 2.2.1 Embedding
+Ở mô hình trên thì Input Embeddings và Output Embeddings đều là lớp nhúng để chuyển chuỗi đầu vào thành vector với số chiều là $d$ (Ở trong bài báo còn gọi là $d_{model} = 512$).
+### 2.2.2 Position Encoding
+Tại vì mô hình sử dụng Self-Attention và không có mối tương quan giữa các vị trí trong chuỗi,do đó nó có thể mất đi tính tuần tự trong câu (ví dụ : đi không và không đi). Do đó người ta đã đưa ra một phương pháp đó là Position Encoding. Position Encoding sẽ thêm vào vector đầu ra của Embedding để tạo ra tính tuần tự cho câu nhưng vẫn sử dụng Self-Attention được.
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/FdPJ7vr.png" />
+</div>
+<p align="center"><b>Position Encoding (Time signal encoding) </b></p>
 
+Công thức của Position Encoding (PE) là : 
+$$PE_{pos,2i}=sin(pos/10000^{2i/d_{model}})$$
+$$PE_{pos,2i+1}=cos(pos/10000^{2i/d_{model}})$$
+
+Trong đó thì $pos$ là vị trí của từ đó trong chuỗi còn $i$ là vị trí chiều.
+
+Ví dụ :
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/opchnh1.png" />
+</div>
+
+Giá trị PE của $x_{2}$ ($pos=1$) tại 4 chiều đầu là $0.84,0.0001,0.54,1.$
+Giá trị 0.84 được lấy bằng $PE_{1,0}=sin(1/10000^{0/d_{model}})=0.84$ do $2i=0$ vì $i=0$.
+
+Và biểu đồ của PE có giá trị như sau (mỗi hàng tương ứng với PE của 1 vector). Do đó hàng đầu tiên sẽ là giá trị chúng ta sẽ thêm vào từ đầu tiên trong chuỗi. Mỗi hàng sẽ chứa 512 giá trị tương đương với $d=512$ và có giá trị nằm trong khoảng -1 và 1 : 
+
+![](https://i.imgur.com/6xXjg35.png)
+
+Từ đây ta có thể thấy là $PE_{pos}$ có thể biểu diễn được bởi $PE_{pos+k}$.
+
+
+## 2.3 Encoder
+Ở phần này mình sẽ đi sâu vào lớp Encoder gồm Self-Attention và Feed Forward Network.
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/oUyq0vu.png" />
+</div>
+<p align="center"><b>Ví dụ 1 khối Encoder</b></p>
+
+Ta có thể thấy là từng từ $x_{i}$ sẽ đưa vào Self-Attention một cách riêng biệt và đưa ra vector $z_{i}$
