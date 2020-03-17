@@ -19,13 +19,12 @@ Hãy nhìn mô hình Transformer như một hộp đen. Ở trong ứng dụng d
 <div class="center" markdown="0">
   <img src="https://i.imgur.com/DGOky96.png" />
 </div>
-![](https://i.imgur.com/DGOky96.png)
-*Tổng quan mô hình Transformer cho bài toán dịch máy*
+<p align="center">*Tổng quan mô hình Transformer cho bài toán dịch máy*</p>
 
 Đi sâu hơn ta sẽ có mô hình Seq2Seq thường sẽ có 2 lớp trong đó lớp đầu tiên là lớp mã hóa (Encoder) để mã hóa chuỗi đầu vào sang chiều không gian khác và lớp thứ 2 là lớp giải mã (Decoder) nhận kết quả của lớp mã hóa để giải mã trở lại hoặc ra một chuỗi đầu ra.
 
 ![](https://i.imgur.com/HlSRR2A.png)
-*Encoder và Decoder trong Transformer*
+<p align="center">*Encoder và Decoder trong Transformer*</p>
 
 
 
