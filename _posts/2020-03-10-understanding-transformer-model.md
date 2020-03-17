@@ -26,7 +26,20 @@ Hãy nhìn mô hình Transformer như một hộp đen. Ở trong ứng dụng d
 ![](https://i.imgur.com/HlSRR2A.png)
 <p align="center"><b>Encoder và Decoder trong Transformer</b></p>
 
+### 2.1 Mô hình Transformer
+Mô hình cụ thể được miêu tả như hình vẽ dưới : 
 
-Mô hình cụ thể được miêu tả như sau
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/5tGoAJ1.png" />
+</div>
+<p align="center"><b>Kiến trúc mô hình Transformer</b></p>
 
+Ta có thể thấy lớp Encoder gồm N khối (ta tạm gọi là EncoderLayer). Và đầu ra của N khối này sẽ được nối sang bên Decoder. Tương tự với đó là bên Decoder cũng chứa N khối DecoderLayer. Trong bài báo cũng có đề cập đến việc lấy N = 6 (Đương nhiên là bạn có thể thử với N khác tùy).
+
+Đây là hình minh họa đơn giản với N=6 khối.
+
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/A0jwW9r.png" />
+</div>
+<p align="center"><b>N=6 khối encoder và decoder</b></p>
 
