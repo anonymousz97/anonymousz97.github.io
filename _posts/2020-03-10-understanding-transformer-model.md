@@ -41,5 +41,18 @@ Ta có thể thấy lớp Encoder gồm N khối (ta tạm gọi là EncoderLaye
 <div class="center" markdown="0">
   <img src="https://i.imgur.com/A0jwW9r.png" />
 </div>
-<p align="center"><b>N=6 khối encoder và decoder</b></p>
+<p align="center"><b>N=6 khối Encoder và Decoder</b></p>
+
+Tất cả các khối Encoder đều là khác nhau,không chia sẻ trọng số. Và được chia ra thành như sau : 
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/BtpSaGU.png" />
+</div>
+<p align="center"><b>Khối Encoder</b></p>
+
+Còn đối với Decoder thì mỗi khối sẽ sử dụng 2 lớp chú ý (Attention Layer) đó là 1 lớp Self-Attention như bên Encoder và 1 lớp Attention mà trong đó lấy thông tin từ lớp Encoder. Hình dưới đây mô tả khối Decoder.
+<div class="center" markdown="0">
+  <img src="https://i.imgur.com/iiBgd9p.png" />
+</div>
+<p align="center"><b>Khối Decoder</b></p>
+
 
