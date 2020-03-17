@@ -107,8 +107,10 @@ Với câu trên thì câu hỏi đặt ra là từ **"it"** biểu diễn cho t
 Chúng ta có thể thấy ở đây thì "it_" có liên kết khá mạnh với "The animal" và đương nhiên là có liên kết với tất cả từ khác tuy nhiên khá yếu.
 
 Công thức Self-Attention : 
-
+<br>
 $$ Attention_{Q,K,V}= softmax(\frac{QK^{T}}{\sqrt(d_{k})})V$$
+<br>
+
 Self-Attention một cách trực quan : 
 
 Với mỗi đầu vào là vector $x_{i}$ ta sẽ có 3 ma trận $W^{Q},W^{K},W^{V}$ tương ứng với $(Q,K,V)$. Lấy  $x_{i}$ nhân với từng ma trận trên sẽ ra 3 vector $q_{i},k_{i},v_{i}$ tương ứng.
@@ -139,4 +141,4 @@ Tương tự cách tính attention như trên:
 
 ![](https://i.imgur.com/Nb2y5sI.png)
 
-Vector $Z$ là vector attention của cả chuỗi đầu vào.
+Ma trận $Z$ là vector attention của cả chuỗi đầu vào.
