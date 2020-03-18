@@ -184,7 +184,7 @@ Nếu thêm tất cả heads vào để visualize thì sẽ khó nhìn hơn 1 ch
 
 ### 2.3.3 Residual Connection
 ![](https://i.imgur.com/t7SNiTs.png)
-<br>
+<br><br>
 Kết quả đầu ra của lớp Self-Attention sẽ được đưa vào các lớp Feed Forward như đã đề cập ở trên. Tuy nhiên để ý mô hình thì xen giữa nó là những lớp Add+Norm. Và nó chính là lớp Normalize vector sử dụng thêm Residual Connection.
 Về cơ bản thì bạn có thể hiểu Residual Connection như việc thay vì dùng Normalize bình thường kết quả đầu ra thì ta sẽ cộng đầu ra với đầu ra ở những lớp trước đó (còn gọi là nhảy cóc) để đưa vào Normalize layer nhằm có thể hạn chế những features không mang nhiều ích lợi và tránh việc bị overfit. Nó cũng là cách để model có thể tăng số lượng layers mà không sợ bị vanishing gradients. Tuy nhiên ở trong giới hạn bài báo này thì mình sẽ chỉ nói qua về nó.
 Quay lại với vấn đề chính thì Encoder sẽ sử dụng Residual Connection xen kẽ như sau.
