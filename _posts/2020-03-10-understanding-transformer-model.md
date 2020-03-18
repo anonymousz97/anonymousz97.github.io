@@ -161,9 +161,37 @@ Trong bài báo cũng chọn $d_{k}=d_{v}=d_{model}/h=64$ (chú ý $h$ ở đây
 ![](https://i.imgur.com/VYgILau.png)
 
 <p align="center"><b>Ví dụ chia ra các heads</b></p>
-
+<br><br>
 ![](https://i.imgur.com/69VGYlf.png)
 <p align="center"><b>Tính độc lập 8 attention heads</b></p>
-
+<br><br>
 ![](https://i.imgur.com/MSAFuGf.png)
 <p align="center"><b>Nối 8 attention heads và nhân với ma trận</b></p>
+<br><br>
+Hình ảnh tổng hợp quá trình trên : 
+![](https://i.imgur.com/4zGJvo0.png)
+
+Và để tổng hợp lại thì chúng ta sẽ xem lại bức ảnh thể hiện sự chú ý của từ "it" lúc nãy khi áp dụng multihead attention vào.
+
+![](https://i.imgur.com/dcy0Gwd.png)
+
+Và dường như ta thấy từ "it" lúc này ngoài chú ý đến "the animal" thì nó còn chú ý đến "tired". Đây là một tín hiệu khả quan đó là ngoài việc tìm ra "the animal" thì mô hình của chúng ta cũng nhận ra ngữ cảnh và đưa ra sự chú ý đến từ "tired".
+
+Nếu thêm tất cả heads vào để visualize thì sẽ khó nhìn hơn 1 chút : 
+
+![](https://i.imgur.com/6heD6Zw.png)
+<br><br>
+
+### 2.3.3 Residual Connection
+![](https://i.imgur.com/t7SNiTs.png)
+Kết quả đầu ra của lớp Self-Attention sẽ được đưa vào các lớp Feed Forward như đã đề cập ở trên. Tuy nhiên để ý mô hình thì xen giữa nó là những lớp Add+Norm. Và nó chính là lớp Normalize vector sử dụng thêm Residual Connection.
+Về cơ bản thì bạn có thể hiểu Residual Connection như việc thay vì dùng Normalize bình thường kết quả đầu ra thì ta sẽ cộng đầu ra với đầu ra ở những lớp trước đó (còn gọi là nhảy cóc) để đưa vào Normalize layer nhằm có thể hạn chế những features không mang nhiều ích lợi và tránh việc bị overfit. Nó cũng là cách để model có thể tăng số lượng layers mà không sợ bị vanishing gradients. Tuy nhiên ở trong giới hạn bài báo này thì mình sẽ chỉ nói qua về nó.
+Quay lại với vấn đề chính thì Encoder sẽ sử dụng Residual Connection xen kẽ như sau.
+
+
+
+![](https://i.imgur.com/mxY0fsa.png)
+
+
+<p style="font-size=30"><b>Và đó là tất cả về Encoder trong Transformer.</b></p>
+
