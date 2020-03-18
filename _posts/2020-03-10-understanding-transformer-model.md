@@ -196,3 +196,40 @@ Quay lại với vấn đề chính thì Encoder sẽ sử dụng Residual Conne
 
 <p style="font-size=50px"><b>Và đó là tất cả về Encoder trong Transformer.</b></p>
 
+## 2.4 Decoder
+
+Có thể nói là chúng ta đã đi qua được 70% quãng đường :heart_eyes: Decoder về cơ bản khá giống với Encoder tuy nhiên vẫn có sự khác biệt.
+
+Đầu tiên là Decoder sẽ có cấu trúc như sau :
+<br><br>
+![](https://i.imgur.com/o6f6ktb.png)
+<br><br>
+Trong đó thì lớp Self-Attention đầu tiên giống như bên Encoder tuy nhiên ở đây thì chúng ta áp dụng thêm 1 lớp mặt nạ (masked) vào. Lớp mặt nạ này sẽ có tác dụng là chống việc tính toán những attention đối với những từ mà đằng sau từ ta đang muốn tính.
+
+Ví dụ : Khi xét đến từ thứ 3 thì ta không muốn tính attention với những từ sau đó mà ta sẽ chỉ quan tâm đến attention đối với những từ trước đó (từ đầu và từ thứ 2).
+
+Còn đối với lớp Encoder-Decoder Attention thứ 2 thì bình thường mỗi lớp Self-Attention nhận vào Q,K,V thì ở lớp này sẽ nhận K,V là đầu ra của lớp cuối cùng của Encoder (Ở trên mình đã có ảnh miêu tả),đương nhiên là Q vẫn là đầu vào output rồi.
+
+Quá trình còn lại tương đương những gì ở bên Encoder. Kết quả đầu ra của Decoder sẽ được đưa qua một lớp tuyến tính để chuyển về số chiều bằng số chiều của lớp nhúng của Decoder (Ouput Embedding) và qua một lớp Softmax để chia xác suất của chúng.
+
+Đây là hình ảnh miêu tả quá trình decoder thực hiện ở bước 1 : 
+<br>
+![](https://i.imgur.com/4Vy4YSP.gif)
+<br>
+Kết quả đầu ra của các bước trước sẽ đưa vào làm Q cho Decoder ở các bước sau như hình dưới : (chọn từ có xác suất lớn nhất).
+<br>
+![](https://i.imgur.com/6UxXGaY.gif)
+<br>
+
+Quá trình thực hiện cứ như thế cho đến khi bao giờ gặp kí tự kết thúc câu (đối với bài toán dịch máy). Đó là lí do ta luôn phải padding vào từng câu kí tự bắt đầu và kết thúc chuỗi để có thể bắt đầu và kết thúc.
+
+## 3. Tổng kết
+
+Từ những gì mình đã chia sẻ với các bạn ở trên,mình muốn tổng hợp lại cho các bạn mô hình Transformer : 
+- Là mô hình Seq2Seq
+- Encoder+Decoder với cơ chế Self-Attention (Multihead Attention).
+- Decoder phải có mặt nạ (masked) để phục vụ vấn đề future-blind.
+- Sử dụng Residual Connection.
+- ...
+
+Cám ơn các bạn đã đọc hết bài viết của mình và hi vọng các bạn có một góc nhìn tường minh hơn về mô hình Transformer cũng như bài báo [Attention is All you need](https://arxiv.org/pdf/1706.03762.pdf). Nhân đây mình cũng cám ơn Jalammar vì bài viết rất hay về [Transformer](http://jalammar.github.io/illustrated-transformer/). Nếu các bạn có câu hỏi hay thắc mắc hay cảm thấy mình viết chưa đúng ở đâu có thể comment hoặc [email](mailto:buichiminh.cntt@gmail.com) cho mình để mình sửa kịp thời,xin cám ơn!
