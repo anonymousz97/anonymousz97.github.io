@@ -142,3 +142,28 @@ Tương tự cách tính attention như trên:
 ![](https://i.imgur.com/Nb2y5sI.png)
 
 Ma trận $Z$ là vector attention của cả chuỗi đầu vào.
+
+### 2.3.2 Multihead Attention
+
+Thay vì việc chỉ sử dụng lớp **ScaledDotProduct Attention** bình thường đối với $d_{model}$, trong bài báo có nói đến việc sử dụng một cơ chế là "**Multihead Attention**". Người ta sẽ sử dụng $n_{heads}=8$ đại diện cho 8 cục **ScaledDotProduct Attention** sau đó nối (Concatenate) chúng lại và nhân với một lớp $W^{o}$ để ra được vector đầu ra mà không thay đổi số chiều.
+Công thức MultiheadAttention được miêu tả như sau : 
+<br>
+$MultiheadAtt_{Q,K,V}=Concat(head_{1},head_{2},...,head_{n_{n_heads}})*W^{o}$
+<br>
+Trong đó thì : 
+<br>
+$head_{i} = Attention(QW_{i}^{Q},KW_{i}^{K},VW_{i}^{V})$
+<br>
+với $W_{i}^{Q}\in \mathbb{R}^{d_{model}\ast d_{k}},W_{i}^{K}\in \mathbb{R}^{d_{model}\ast d_{k}},W_{i}^{V}\in \mathbb{R}^{d_{model}\ast d_{v}},W_{i}^{O}\in \mathbb{R}^{hd_{v}\ast d_{model}}.$
+<br>
+Trong bài báo cũng chọn $d_{k}=d_{v}=d_{model}/h=64$ (chú ý $h$ ở đây là $n_{heads}$). 3 hình bên dưới sẽ miêu tả từng bước đã được đề cập vừa xong.
+
+![](https://i.imgur.com/VYgILau.png)
+
+<p align="center"><b>Ví dụ chia ra các heads</b></p>
+
+![](https://i.imgur.com/69VGYlf.png)
+<p align="center"><b>Tính độc lập 8 attention heads</b></p>
+
+![](https://i.imgur.com/MSAFuGf.png)
+<p align="center"><b>Nối 8 attention heads và nhân với ma trận</b></p>
