@@ -6,12 +6,14 @@ Như tiêu đề thì mình thấy đây cũng là một vấn đề mà nhiều
 - Download 1 lần xong có thể lưu lên drive luôn để sử dụng.(tương tự với cách down về máy rồi lưu lên drive).
 
 Đầu tiên thì các bạn vào trang kaggle đăng ký 1 tài khoản và vào phần My account như trên hình dưới (góc phải trên).
-![](https://i.imgur.com/nOTj7mK.png)
-
+<p align="center">
+  <img src="https://i.imgur.com/nOTj7mK.png">
+</p>
 
 Sau đó thì các bạn kéo xuống phần API và chọn Create New API Tokens. 
-![](https://i.imgur.com/5VSJ6G2.png)
-
+<p align="center">
+  <img src="https://i.imgur.com/5VSJ6G2.png">
+</p>
 Ngay sau khi ấn xong thì nó sẽ download 1 file **kaggle.json** về máy bạn.
 
 Tiếp theo thì bạn mở tab google colab cần download kaggle dataset lên và gõ vào trong cell những dòng này : 
