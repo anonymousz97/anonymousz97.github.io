@@ -33,10 +33,6 @@ key: page-about
 **Hi,my name is Minh. I've just graduated from PTIT university. My main major is IT but I have passion for Artificial Intelligent so now I'm working as junior AI engineer.I created this blog to sharing my knownledge in this domain. If you have any suggestion,question please email me : [buichiminh.cntt@gmail.com](mailto:buichiminh.cntt@gmail.com)**
 
 
-<object data="https://drive.google.com/file/d/1sDfc6Ziu3fPUPm69ruOPnRQp0V73WBjQ/view?usp=sharing" type="application/pdf" width="700px" height="700px">
-    <embed src="https://drive.google.com/file/d/1sDfc6Ziu3fPUPm69ruOPnRQp0V73WBjQ/view?usp=sharing">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+https://docs.google.com/viewer?url=https://raw.githubusercontent.com/buiminhptit/buiminhptit.github.io/master/cv.pdf
 
 
