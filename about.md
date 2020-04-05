@@ -26,9 +26,9 @@ titles:
 key: page-about
 ---
 
-<div class="center" markdown="0">
+<p align='center'>
   <img src="https://raw.githubusercontent.com/buiminhptit/buiminhptit.github.io/master/me.png" />
-</div>
+</p>
 
 **Hi,my name is Minh. I've just graduated from PTIT university. My main major is IT but I have passion for Artificial Intelligent so now I'm working as junior AI engineer.I created this blog to sharing my knownledge in this domain. If you have any suggestion,question please email me : [buichiminh.cntt@gmail.com](mailto:buichiminh.cntt@gmail.com)**
 
