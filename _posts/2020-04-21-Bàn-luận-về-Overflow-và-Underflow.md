@@ -1,5 +1,3 @@
-# Bàn luận về Overflow và Underflow
-
 Một trong những vấn đề cơ bản trong việc biểu diễn những phép tính và giá trị toán học trên máy tính đó là ta phải biểu diễn những số thập phân có vô hạn chữ số đằng sau dấu phẩy bởi hữu hạn số lượng bits. Điều này có nghĩa là ta phải đưa ra một mức xấp xỉ tương đối (approximation error) khi biểu diễn số trên máy tính. Một trong số cách biểu diễn đó là làm tròn số. Tuy nhiên nó nảy sinh ra vấn đề khá nghiêm trọng là các con số đi từ lớp này qua lớp khác, đi từ phép tính này qua phép tính khác sẽ khiến cho thuật toán có thể không thể học được nếu như nó không được thiết kế để làm tối ưu tích lũy của lỗi làm tròn.
 
 Ở đây phải kể đến 2 trường hợp là : Overflow và Underflow.
