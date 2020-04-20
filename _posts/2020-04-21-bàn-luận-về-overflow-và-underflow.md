@@ -12,7 +12,7 @@ $$softmax(x)_{i} = \frac{exp(x_{i})}{\sum_{j=1}^{n}exp(x_{j})}$$
 
 Giả sử tất cả giá trị của $x_{i}$ đều là hằng số $c$. Thì ta có thể thấy là tất cả output đều là $\frac{1}{n}$. Nếu giá trị $c$ có giá trị độ lớn là lớn nghĩa là $-\infty$ hay $\infty$ thì giá trị của softmax ra là giá trị không thể định nghĩa được.
 
-Cách xử lý việc này là thay vì tính $softmax(x_{i})$ thì ta sẽ tính $softmax(z)$ trong đó $z=x-max_{i}x_{i}$.
+Cách xử lý việc này là thay vì tính $softmax(x)$ thì ta sẽ tính $softmax(z)$ trong đó $z=x-max_{i}x_{i}$.
 
 Mình đã viết hàm softmax để tính toán cho những thứ ở trên : 
 
