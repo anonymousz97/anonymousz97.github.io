@@ -13,7 +13,7 @@ Vậy ý tưởng của việc xây dựng mô hình này là gì?
 - Chúng ta sử dụng một số lượng lớn các câu được thu thập từ nhiều nguồn để huấn luyện.
 - Mỗi từ được biểu diễn bởi một vecto đặc với số chiều được xác định trước (fixed) và random khi khởi tạo.
 - Với từng câu ta sẽ duyệt qua tất cả phần tử (trừ phần tử đầu) và xét một ô cửa sổ với size = m quanh cái từ đó. Từ đang xét gọi là center word,từ bên cạnh nằm trong cửa sổ gọi là outside word.
-- Tính độ tương quan giữa center word với các outside word sau đó để tính xác suất xảy ra outside word khi tồn tại center word ($P(outside|center)$).
+- Tính độ tương quan giữa center word với các outside word sau đó để tính xác suất xảy ra outside word khi tồn tại center word ($P(outside\mid center)$).
 - Chỉnh giá trị của word vectors sao cho tối ưu giá trị xác suất.
 
 ![](https://i.imgur.com/zYyer6u.png)
@@ -30,7 +30,7 @@ Còn đây là khi xét ở từ "banking".
 
 Ta có thể thấy Likelihood là độ thích ứng của cả câu input đầu vào vì nó là tích của các tích xác suất của các từ trong từng cửa sổ trượt từ đầu đến cuối. Ta sử dụng average negative log likelihood làm hàm mục tiêu và gọi là $J(\theta)$ hay còn gọi là loss hay cost function. Do đó việc của chúng ta sẽ là tối thiểu cái $J(\theta)$ này. ($\theta$ đại diện cho tất cả các tham số mình huấn luyện). 
 
-Ta sử dụng công thức của hàm softmax để tính $P(outside|center)$ là : 
+Ta sử dụng công thức của hàm softmax để tính $P(outside\mid center)$ là : 
 
 $$softmax(x){i} = \frac{exp(x{i})}{\sum_{j=1}^{n}exp(x_{j})}$$
 
