@@ -49,3 +49,5 @@ Sau đó ta sẽ tính đạo hàm của $J(\theta)$ theo từng parameters tron
 ![](https://i.imgur.com/eACOJV6.png)
 
 Ở phần sau mình sẽ nói tiếp về cách tính đạo hàm , chain rule và các mô hình CBOW và Skip-grams vốn là ý tưởng mà word2vec đã kết hợp lại :hamster: Cám ơn các bạn đã chú ý theo dõi!
+
+Tài liệu tham khảo : http://web.stanford.edu/class/cs224n/slides/cs224n-2020-lecture01-wordvecs1.pdf
