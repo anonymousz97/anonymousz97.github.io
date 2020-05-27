@@ -30,6 +30,48 @@ type: article
 <div id="gitalk-container"></div>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+        //去除尾部匹配正则数组的字符串  
+        String.prototype.trimEnd = function(regStr)  
+        {  
+            var result = this;
+            if(regStr==undefined||regStr==null||regStr=="")  
+            {    
+                return result;
+            }
+            var array = regStr.split(',');
+
+            if(array.length > 0){
+                 
+                var c = array.shift();
+                var str= this;
+                var i = str.length;  
+                var rg = new RegExp(c);
+                var matchArr = str.match(rg);
+
+                if(matchArr != undefined && matchArr != null && matchArr.length > 0)
+                {
+                  var matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+                                            .replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+                                            .replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+                                            .replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+                                            .replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+                                            .replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+                                            .replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+                                            .replace(/\./g, "\\.").replace(/\&/g, "\\&");
+                  matchStr = matchStr + '$';
+                  result = str.replace(new RegExp(matchStr), "");
+                }
+                
+                if(array.length > 0){
+                    return result.trimEnd(array.join())
+                }
+                else{
+                    return result; 
+                } 
+            } 
+        };
+      </script>
     <script>
       const gitalk = new Gitalk({
   clientID: '41da818598db95441b85',
@@ -37,7 +79,7 @@ type: article
   repo: 'buiminhptit.github.io',      // The repository of store comments,
   owner: 'buiminhptit',
   admin: ['buiminhptit'],
-  id: md5(window.location.pathname),     // Ensure uniqueness and length less than 50
+  id: md5(location.href.trimEnd('{{theme.gitalk.hreftrimend}}')),     // Ensure uniqueness and length less than 50
   distractionFreeMode: false  // Facebook-like distraction free mode
 })
 
