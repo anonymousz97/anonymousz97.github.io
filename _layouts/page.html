@@ -23,9 +23,9 @@ layout: base
 {%- assign _full_width = __return -%}
 
 {%- include snippets/assign.html
-  target = site.data.variables.default.page.comment
+  target = true
   source0=layout.comment source1=page.comment -%}
-{%- assign _comment = true -%}
+{%- assign _comment = __return -%}
 
 
 {%- assign _article_header_excerpt_truncate = include.excerpt_truncate | default: 200 -%}
