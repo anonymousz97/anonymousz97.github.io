@@ -1,3 +1,4 @@
+
 # Giải thích mô hình transformer thông qua bài báo [Attention is All you need](https://arxiv.org/pdf/1706.03762.pdf)
 
 ## 1. Giới thiệu : 
@@ -233,3 +234,4 @@ Từ những gì mình đã chia sẻ với các bạn ở trên,mình muốn t�
 - ...
 
 Cám ơn các bạn đã đọc hết bài viết của mình và hi vọng các bạn có một góc nhìn tường minh hơn về mô hình Transformer cũng như bài báo [Attention is All you need](https://arxiv.org/pdf/1706.03762.pdf). Nhân đây mình cũng cám ơn Jalammar vì bài viết rất hay về [Transformer](http://jalammar.github.io/illustrated-transformer/). Nếu các bạn có câu hỏi hay thắc mắc hay cảm thấy mình viết chưa đúng ở đâu có thể comment hoặc [email](mailto:buichiminh.cntt@gmail.com) cho mình để mình sửa kịp thời,xin cám ơn!
+
