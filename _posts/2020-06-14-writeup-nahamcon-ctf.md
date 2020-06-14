@@ -1,4 +1,3 @@
-# Writeup NahamCon CTF
 
 ## Candroid (Mobile)
 
