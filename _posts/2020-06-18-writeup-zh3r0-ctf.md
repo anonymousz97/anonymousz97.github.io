@@ -72,15 +72,15 @@ Thì ta có thể phục hồi được message M ban đầu mà thậm chí kh�
 
 Bằng cách sử dụng CRT ( Chinesse Remander Theorem ) ta có thể dễ dàng chứng minh được sẽ tồn tại 1 số C sao cho : 
 
-C = pow(M,3,N1*N2*N3)
+C = pow(M,3,N1 * N2 * N3)
 
 Gọi 
-T1 = C1*(N2*N3)*invert_modular(N2*N3,N1)
-T2 = C2*(N1*N3)*invert_modular(N1*N3,N2)
-T3 = C3*(N1*N2)*invert_modular(N1*N2,N3)
+T1 = C1 * (N2 * N3)* invert_modular(N2 * N3,N1)
+T2 = C2 * (N1 * N3)* invert_modular(N1 * N3,N2)
+T3 = C3 * (N1 * N2)* invert_modular(N1 * N2,N3)
 
-Lúc này C = (T1 + T2 + T3) % (N1*N2*N3)
-Vậy C = pow(M,3,N1*N2*N3)
+Lúc này C = (T1 + T2 + T3) % (N1 * N2 * N3)
+Vậy C = pow(M,3,N1 * N2 * N3)
 
 C = pow(M,3)
 M = pow ( C , 1/3 )
