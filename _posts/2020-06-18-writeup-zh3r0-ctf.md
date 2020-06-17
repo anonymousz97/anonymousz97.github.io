@@ -189,7 +189,7 @@ Nhìn vào những bit đầu là 50 4b 03 04 thì chắc chắn nó chỉ thu�
 
 ![](https://i.imgur.com/DMVPSBX.png)
 
-Mở file flag ra được đoạn sau : `K9bC_L`D?f0DEb8c?_06cDJN`
+Mở file flag ra được đoạn sau : ```K9bC_L`D?f0DEb8c?_06cDJN```
 Sau 1 tgian thì mình cũng tìm ra đây là ROT cipher. Tuy nhiên là ROT 94 kí tự ASCII in được ( từ 33 đến 126).
 
 ```
