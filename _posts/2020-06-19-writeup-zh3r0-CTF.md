@@ -1,5 +1,3 @@
-# Writeup Zh3r0 CTF
-
 ## RSA-Warmup (Crypto)
 ![](https://i.imgur.com/GQgTwjG.png)
 
