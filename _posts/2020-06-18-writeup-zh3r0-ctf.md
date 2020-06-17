@@ -76,13 +76,17 @@ C = pow(M,3,N1 * N2 * N3)
 
 Gọi 
 T1 = C1 * (N2 * N3)* invert_modular(N2 * N3,N1)
+
 T2 = C2 * (N1 * N3)* invert_modular(N1 * N3,N2)
+
 T3 = C3 * (N1 * N2)* invert_modular(N1 * N2,N3)
 
 Lúc này C = (T1 + T2 + T3) % (N1 * N2 * N3)
+
 Vậy C = pow(M,3,N1 * N2 * N3)
 
 C = pow(M,3)
+
 M = pow ( C , 1/3 )
 
 Ta tìm được Message M ban đầu.
