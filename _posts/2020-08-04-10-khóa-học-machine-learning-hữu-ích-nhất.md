@@ -1,6 +1,6 @@
 10 Helpful Machine Learning Courses by Huyen Chip
 
-Trên twitter thì Huyen Chip (1 trong những nhân viên làm về AI cho NDIVIA) đã chia sẻ 10 khóa học về ML mà cô cảm thấy hữu ích nhất được xếp theo thứ tự như sau : 
+Trên twitter thì Huyen Chip (1 trong những nhân viên làm về AI cho NVIDIA) đã chia sẻ 10 khóa học về ML mà cô cảm thấy hữu ích nhất được xếp theo thứ tự như sau : 
 
 - **[1. Probability and Statistics by Stanford Online](https://github.com/buiminhptit/Probability-and-Statistics-by-Stanford){:target="_blank"}**
 Khóa học này sẽ cover toàn bộ kiến thức basic về xác suất và thống kê, phân tích data, tìm hiểu và ứng dụng (được giảng dạy bởi ĐH Stanford).
