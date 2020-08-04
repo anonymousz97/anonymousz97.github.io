@@ -23,4 +23,4 @@ Khóa này cover toàn bộ kiến thức và kĩ năng cần thiết để xây
 - **[10. How to Win a Data Science Competition: Learn from Top Kagglers by Coursera.](https://www.coursera.org/learn/competitive-data-science/home/welcome){:target="_blank"}**
 Khóa này là chia sẻ những kinh nghiệm để xử lý những vấn đề về AI thực tế gặp ngoài đời.
 
-Bài tweet nguồn : https://twitter.com/chipro/status/1157772364672667648
+Bài tweet nguồn : [Huyen Chip](https://twitter.com/chipro/status/1157772364672667648){:target="_blank"}
