@@ -21,12 +21,15 @@ Các bạn có thể hiểu đơn giản như mô hình sau :
 
 Trong paper thì cả Generator (G) và Discriminator (D) đều sử dụng Multi Layer Perceptron. Đây như trò chơi 2 người với mỗi người mỗi vai trò khác nhau mà công thức dưới đây sẽ biểu diễn cho việc đó : 
 
+![](https://i.imgur.com/OtlWf3Q.png)
 
 Dễ thấy công thức ở trên có vẻ khó hiểu nhưng thực ra không khó hiểu. Đầu tiên ta xét nhiệm vụ của D là phải làm tối ưu giữa việc phân biệt dữ liệu thật và dữ liệu fake. Vậy nên công thức ở trên ta đặt $V(D,G)$ là giá trị $D(real) * log(D(real))+D(fake) * log(1-D(G(z)))$ trong đó $D(real)$ và $D(G(z))$ là giá trị mà model $D$ nhận biết được data fake hay real. Vì nhiệm vụ là tối ưu sự khác biệt giữa data real và fake do đó model $D$ được gán giá trị là làm tối ưu $V(D,G)$. Ngược lại thì ta nhận thấy model $G$ là mô hình sinh dữ liệu cần làm thế nào để fake data tốt nhất, nó sẽ làm mọi cách để khiến model $D$ giảm khả năng phân biệt => hay cũng như là tăng khả năng biểu diễn phân bố dữ liệu tốt hơn. Vậy nên ở đây vai trò của model $G$ như thể tối thiểu giá trị của model $D$ hay là $min(max(V(D,G)))$. Tuy nhiên dễ nhận thấy là minimize $G$ thì không liên quan đến phần đầu của phương trình trên do đó ta chỉ quan tâm phần còn lại của phương trình là phần chứa $log(1-D(G(z)))$.
 
 Hình tiếp theo sẽ mô tả quá trình huấn luyện của GAN.
 
 ![](https://i.imgur.com/592F1nv.png)
+
+
 Dễ dàng nhận thấy ban đầu ở hình (a) khi mà mô hình G chưa được huấn luyện thì việc nó biểu diễn lại phân bố của x từ phân bố ngẫu nhiên z ban đầu thì sẽ tạo ra giá trị như đường kẻ màu xanh lá cây trong khi phân bố dữ liệu thật là giá trị đường chấm màu đen. Dễ nhận thấy rằng khi mới training thì model sinh G rất kém do đó việc nhận ra dữ liệu giả và dữ liệu thật rất dễ do đó $D(G(z))$ rất dễ đạt giá trị 0 do đó $log(1-D(G(z)))$ sẽ dễ dàng đạt giá trị 0 khiến cho mô hình rất khó để có thể học. Từ đó người ta sử dụng một trick đó là thay vì việc ta tối thiểu(minimize) giá trị $log(1-D(G(z)))$ thì ta sẽ tìm maximize của $log(D(z))$. Hàm này có ý nghĩa tương tự nhưng lại đem lại gradients nhiều hơn trong quá trình bắt đầu training.
 
 Trở lại với hình trên thì ta sẽ có đường kẻ màu xanh lá cây đại diện cho $G(z)$ (khi map giá trị ở $z$ sang $x$) , đường kẻ màu đen là x (real data) và đường kẻ màu xanh nước biển là đường phân biệt phân bố dữ liệu của $D(x)$. Sau đó ta huấn luyện model $D$ như ở hình (b) ta thấy đường màu xanh nước biển đã phân biệt tốt hơn. Tiếp đến ta huấn luyện model $G$ hình (c) ta sẽ thấy phân bố của $z$ đã tiến gần đến với phân bố của dữ liệu $x$ hơn(giá trj gradients sẽ dẫn $G(z)$ hay là $p_{z}$ tiến gần hơn đến $p_{x}$) . Quá trình cập nhật như thế này sẽ diễn ra liên tục để đến hình (d) thì khi mà gần như đường màu xanh lá cây trùng với đường chấm đen thì đường màu xanh sẽ thẳng và đạt giá trị 0,5 (khi $p_{x}=p_{g}$).
