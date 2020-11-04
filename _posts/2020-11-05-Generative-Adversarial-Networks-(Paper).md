@@ -1,6 +1,6 @@
 # PAPER a Day : 
 
-## Generative Adversarial Networks (https://arxiv.org/pdf/1406.2661.pdf)
+## Generative Adversarial Networks ([https://arxiv.org/pdf/1406.2661.pdf](https://arxiv.org/pdf/1406.2661.pdf))
 
 GAN được coi như là một trong những phát kiến vĩ đại nhất trong thập kỉ qua của Deep Learning. Tác giả nói đây là một framework thông qua việc huấn luyện đồng thời 2 models : model sinh G sẽ cố gắng mô phỏng được phân bố của dữ liệu còn model $D$ là mô hình phân biệt sẽ cố gắng phân biệt data được sinh ra do model sinh G hay là từ data thật.
 
