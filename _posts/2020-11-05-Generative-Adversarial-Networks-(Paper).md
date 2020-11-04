@@ -53,12 +53,12 @@ Ta có $max V(G,D)$ sẽ là :
 
 Ta cộng được như trên do ta đã giả sử là đạt global optimal là $G(z)$ có phân bố gần tương tự $x$. Và phương trình $a * logy+b * log(1-y)$ đạt max bằng $\frac{a}{a+b}$ hay bằng 1/2 (do $p_{g}=p_{data}$).
 
-## Một số lưu ý : 
+## Một số lưu ý 
 - Mô hình Generator được xây dựng sử dụng relu và sigmoid là activations.
 - Mô hình Discriminator sử dụng max-out activations(Dropout trong quá trình training).
 - Giá trị noise chỉ được thêm vào ở lớp đầu tiên chứ không được thêm vào các lớp sau.
 
-## Advantage và Disadvantage : 
+## Advantage và Disadvantage 
 Disadvantages : 
 - Không có biểu diễn cụ thể của $p_{g}(x)$.
 - Training $D$ và $G$ cần phối hợp tốt với nhau tránh trường hợp training $G$ quá nhiều sẽ khiến mô hình giá trị của $G$ thay đổi liên tục và sẽ biểu diễn nhiều giá trị trên tập $z$ bằng 1 giá trị tập $x$ => không biểu diễn cụ thể được.
