@@ -23,7 +23,7 @@ Trong paper thì cả Generator (G) và Discriminator (D) đều sử dụng Mul
 
 ![](https://i.imgur.com/OtlWf3Q.png)
 
-
+<br>
 
 Dễ thấy công thức ở trên có vẻ khó hiểu nhưng thực ra không khó hiểu. Đầu tiên ta xét nhiệm vụ của D là phải làm tối ưu giữa việc phân biệt dữ liệu thật và dữ liệu fake. Vậy nên công thức ở trên ta đặt $V(D,G)$ là giá trị $D(real) * log(D(real))+D(fake) * log(1-D(G(z)))$ trong đó $D(real)$ và $D(G(z))$ là giá trị mà model $D$ nhận biết được data fake hay real. Vì nhiệm vụ là tối ưu sự khác biệt giữa data real và fake do đó model $D$ được gán giá trị là làm tối ưu $V(D,G)$. Ngược lại thì ta nhận thấy model $G$ là mô hình sinh dữ liệu cần làm thế nào để fake data tốt nhất, nó sẽ làm mọi cách để khiến model $D$ giảm khả năng phân biệt => hay cũng như là tăng khả năng biểu diễn phân bố dữ liệu tốt hơn. Vậy nên ở đây vai trò của model $G$ như thể tối thiểu giá trị của model $D$ hay là $min(max(V(D,G)))$. Tuy nhiên dễ nhận thấy là minimize $G$ thì không liên quan đến phần đầu của phương trình trên do đó ta chỉ quan tâm phần còn lại của phương trình là phần chứa $log(1-D(G(z)))$.
 
