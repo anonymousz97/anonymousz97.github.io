@@ -48,7 +48,9 @@ Với hàm biểu diễn $G$ được fixed thì việc tối ưu $D$ như sau :
 
 
 Ta có $max V(G,D)$ sẽ là : 
+
 ![](https://i.imgur.com/4Bro5iY.png)
+
 Ta cộng được như trên do ta đã giả sử là đạt global optimal là $G(z)$ có phân bố gần tương tự $x$. Và phương trình $a * logy+b * log(1-y)$ đạt max bằng $\frac{a}{a+b}$ hay bằng 1/2 (do $p_{g}=p_{data}$).
 
 ## Một số lưu ý : 
