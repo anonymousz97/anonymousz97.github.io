@@ -1,4 +1,4 @@
-# PAPER a Day : 
+# PAPER a Week : 
 
 ## Generative Adversarial Networks ([https://arxiv.org/pdf/1406.2661.pdf](https://arxiv.org/pdf/1406.2661.pdf))
 
