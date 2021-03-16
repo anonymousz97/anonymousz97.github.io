@@ -57,6 +57,7 @@ Do đó ta có thể định nghĩa mạng ConvNet thành chuỗi các layer n�
 - FLOPS / target_flops
 
 Đây cũng là các tiêu chí để xây dựng mô hình EfficientNet B0.
+<br>
 ![](https://i.imgur.com/fTZxpY1.png)
 
 trong đó $d$ là depth , $w$ là width , $r$ là image resolution.
