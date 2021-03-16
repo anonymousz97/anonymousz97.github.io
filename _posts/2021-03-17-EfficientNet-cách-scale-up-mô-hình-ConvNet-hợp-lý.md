@@ -1,5 +1,3 @@
-# EfficientNet : cách scale up mô hình ConvNet hợp lý
-
 Link paper : https://arxiv.org/pdf/1905.11946.pdf
 
 ## 1. Giới thiệu
