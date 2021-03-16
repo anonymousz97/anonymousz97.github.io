@@ -1,4 +1,4 @@
-Link paper : https://arxiv.org/pdf/1905.11946.pdf
+Link paper : [https://arxiv.org/pdf/1905.11946.pdf](https://arxiv.org/pdf/1905.11946.pdf)
 
 ## 1. Giới thiệu
 Mạng tích chập (ConvNet) đã thực sự trở thành một trong những mô hình được sử dụng nhiều nhất trong Computer Vision. Đa số các mô hình ConvNet đều đạt được một kết quả khả quan và nhất định với lượng resources (cơ sở vật chất,FLOPS,...) cố định. Do đó nhằm tăng độ chính xác mô hình thì chúng ta thường có 3 hướng sau : 
@@ -67,7 +67,7 @@ resolution : $r = \gamma^{\phi}$
 sao cho $\alpha . \beta^{2} . \gamma^{2} \approx 2$
 và $\alpha \geq 1,\beta\geq1,\gamma\geq1$
 
-Các giá trị $\alpha,\beta,\gamma$ có thể tìm ra được thông qua 1 gridsearch tại không gian nhỏ. Hệ số $\phi$ là hệ số do người dùng cài đặt tùy thuộc vào mức độ scale mà người dùng muốn. Chú ý rằng FLOPS sẽ tăng tỉ lệ thuận với $d,w^{2},r^{2}$.
+Các giá trị $\alpha,\beta,\gamma$ có thể tìm ra được thông qua 1 gridsearch tại không gian nhỏ. Hệ số $\phi$ là hệ số do người dùng cài đặt tùy thuộc vào mức độ scale mà người dùng muốn. Chú ý rằng FLOPS sẽ tăng tỉ lệ thuận với $d,w^{2},r^{2}$ .
 
 Như đề cập ở trên thì việc xây dựng mạng EfficientNet sẽ dựa trên 2 yếu tố và hàm mục tiêu sẽ là $ACC(m)\times [FLOPS(m)/T]^{w}$ trong đó $ACC(m)$ là độ chính xác, $T$ là target FLOPS tối đa ta có thể handle, $w=-0.07$ là tham số để kiểm tra và đánh giá trade-off giữa acc và FLOPS.
 
