@@ -51,7 +51,7 @@ Cắt ngang 1 tý :
 
 Ta thấy với mỗi layer ConvNet có thể biểu diễn dưới dạng $Y_{i}=F_{i}(X_{i})$ trong đó $F_{i}$ là toán tử và $Y_{i}$ là đầu ra và $X_{i}$ là đầu vào ở trạng thái $i$ , trong đó $X_{i}$ là tensor shape $(H_{i},W_{i},C_{i})$.
 
-Do đó ta có thể định nghĩa mạng ConvNet thành chuỗi các layer nối liền nhau như sau : $N=F_{k} \odot ...\odot F_{2} \odot F_{1}(X_{1}) = \odot _{j=1...k}F_{j}(X_{1})$. Thông thường thì mạng ConvNet sẽ chứa $N$ block giống nhau và chỉ khác nhau phần cuối tùy theo task.
+Do đó ta có thể định nghĩa mạng ConvNet thành chuỗi các layer nối liền nhau như sau : $N=F_{k} \odot ...\odot F_{2} \odot F_{1}(X_{1}) = \odot _{j=1...k}F_{j}(X_{1})$ . Thông thường thì mạng ConvNet sẽ chứa $N$ block giống nhau và chỉ khác nhau phần cuối tùy theo task.
 Ở đây thì tác giả đề xuất đến bài toán cần tìm các số để Accuracy đạt tối đa với 2 tiêu chí gồm : 
 - accuracy
 - FLOPS / target_flops
