@@ -87,7 +87,7 @@ B2 : Sử dụng chính các giá trị $\alpha,\beta,\gamma$ tương ứng đ�
 
 
 
-## 4. Code
+## 5. Code
 Code trên tham khảo trên mạng
 
 
