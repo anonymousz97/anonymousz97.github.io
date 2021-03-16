@@ -14,6 +14,7 @@ Tuy nhiên các cách để scale mô hình bây giờ đa số là chọn một
 => Bài báo đưa ra một cách tiếp cận mới để nhằm scale mô hình ConvNet đạt kết quả tốt hơn (accuracy) với số lượng params ít hơn, số FLOPS tăng lên (số lượng floating points cần tính toán per seconds).
 
 Ngoài ra tác giả còn đề cập thêm mô hình EfficientNet B0 đến B7 (B0 là base còn B1->B7 là tuning của B0) đã hoàn toàn đánh bại các mô hình ConvNet về performance như hình sau.
+<br>
 ![](https://i.imgur.com/4DMjjPe.png)
 
 
