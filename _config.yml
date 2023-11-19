@@ -20,10 +20,10 @@ text_skin: "chocolate" # "default" (default), "dark", "forest", "ocean", "chocol
 highlight_theme: "tomorrow-night-bright" # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : "https://buiminhptit.github.io"
 baseurl : '/'
-title   : "Minh Bùi Blog"
-theme: jekyll-text-theme
+title   : "Mixin Blog"
+# theme: jekyll-text-theme
 description: > # this means to ignore newlines until "Language & timezone"
-  "Minh Bùi Blog"
+  "Mixin Blog"
 
 
 ## => Language and Timezone
